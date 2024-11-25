@@ -61,26 +61,16 @@ section {
     color: #4ecca3;
 }
 
-/* Hover effect for the navigation links */
 .header nav a:hover {
     color: #4ecca3;
 }
 
-/* Styling for the menu icon */
-.fa-bars {
-    font-size: 24px;
-    color: #f0f0f0;
-    cursor: pointer;
-    display: none; /* Hide by default for larger screens */
-}
-
-/* Responsive: Show the menu icon on smaller screens */
 @media screen and (max-width: 768px) {
     .fa-bars {
         display: block;
     }
 
-    /* Hide the navigation links on smaller screens by default */
+
     .header nav {
         display: none;
         flex-direction: column;
@@ -98,12 +88,105 @@ section {
         text-align: center;
     }
 
-    /* When the menu icon is clicked, show the navigation menu */
     .header nav.show {
         display: flex;
     }
 }
+    Nav link
 
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1c1e2b;
+        padding: 15px 20px;
+    }
+    
+    .logo h1 {
+        color: #fff;
+        font-family: 'Georgia', serif;
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #36c5a7;
+    }
+    
+    /* Burger menu for smaller screens */
+    .burger {
+        display: none;
+        cursor: pointer;
+    }
+    
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+        .nav-links {
+            position: absolute;
+            right: 0;
+            height: 92vh;
+            top: 8vh;
+            background-color: #1c1e2b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+        }
+    
+        .nav-links li {
+            opacity: 0;
+        }
+    
+        .burger {
+            display: block;
+        }
+    
+        .nav-active {
+            transform: translateX(0%);
+        }
+    
+        .nav-links li {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .burger.toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+    
+        .burger.toggle .line2 {
+            opacity: 0;
+        }
+    
+        .burger.toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    }
 
 
 #menu-icon {
@@ -190,6 +273,18 @@ span {
 .btn.hover{
     box-shadow: none;
 }
+.btn-cv {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-cv:hover {
+    background-color: #007bff;
+  }
 /* about me section */
 .about{
     display: flex;
@@ -197,11 +292,6 @@ span {
     align-items: center;
     gap:2rem;
     background: var(--snd-bg-color);
-}
-.about .img img{
-    width: 100%;
-    border-radius: 100%;
-    margin-left: 200%;
 }
 .heading {
     font-size: 4.5rem;
@@ -288,43 +378,10 @@ span {
     color:var(--snd-bg-color);
 }
 
-/* .header a{
-    color: white;
-}
-body{
-    font-family: Arial;
-  }
-  .portfolio-item{
-    color: white;
-  }
-  .portfolio-item > img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-  .portfolio-item img {
-    transition: all linear 300ms;
-  }
-  .portfolio-layer{
-    position: relative;
-  }
-  .portfolio-layer > *{
-    z-index: 1;
-  }
-  .portfolio-layer:after{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);  
-    content: '';
-  } */
-
 /* About section  */
 
 .about-image img{
-    border-radius: 500px;
+    border-radius: 100px;
 }
 
 #about .about-content{
@@ -526,3 +583,6 @@ section {
     }
     
 }
+
+
+
